@@ -1,6 +1,6 @@
-FROM python:alpine3.7
+FROM python:3.6-alpine
 COPY . /app
 WORKDIR /app
-RUN pip install --upgrade pip -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
-CMD python ./logic_server.py
+CMD python ./final.py
