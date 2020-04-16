@@ -1,6 +1,6 @@
-FROM python:alpine3.7
+FROM python:3.6-alpine
 COPY . /app
 WORKDIR /app
+RUN adduser testuser -D -h /home/app app
 RUN pip install --upgrade pip -r requirements.txt
-EXPOSE 5000
-CMD python ./logic_server.py
+ENTRYPOINT ["python3", "logic_server.py"]
